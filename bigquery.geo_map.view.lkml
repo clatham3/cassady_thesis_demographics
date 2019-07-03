@@ -114,6 +114,10 @@ view: bq_logrecno_bg_map {
     }
     suggest_persist_for: "120 hours"
   }
+  
+  dimension: county_name_upper {
+    sql: upper(${TABLE}.county_name);;
+  }
 
 #   measure: count_county {
 #     type:  count_distinct
