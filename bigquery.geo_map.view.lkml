@@ -116,7 +116,7 @@ view: bq_logrecno_bg_map {
   }
   
   dimension: county_name_upper {
-    sql: upper(replace(${TABLE}.county_name, ' County', ''));;
+    sql: upper(${county_name});;
   }
 
 #   measure: count_county {
