@@ -117,8 +117,8 @@ view: bq_logrecno_bg_map {
   
   dimension: pure_county_name {
     type: string
-    sql: replace(${TABLE}.county_name, ' County', '') AND replace(${TABLE}.county_name, ' Parish', '') 
-        AND replace(${TABLE}.county_name, ' Municipio', '')
+    sql: replace(${TABLE}.county_name, ' County', ''), replace(${TABLE}.county_name, ' Parish', ''), 
+        replace(${TABLE}.county_name, ' Municipio', '');;
   }
   
   dimension: county_name_upper {
