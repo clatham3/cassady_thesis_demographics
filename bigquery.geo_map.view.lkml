@@ -116,7 +116,7 @@ view: bq_logrecno_bg_map {
   }
   
   dimension: county_name_upper {
-    sql: upper(CONCAT(replace(${TABLE}.county_name, ' COUNTY', ''), ', ', ${stusab}));;
+    sql: upper(CONCAT(replace(${TABLE}.county_name, ' County' || ' Parish' || ' Municipio', ''), ', ', ${stusab}));;
   }
 
 #   measure: count_county {
