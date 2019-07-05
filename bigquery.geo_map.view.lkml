@@ -171,10 +171,21 @@ view: bq_logrecno_bg_map {
     suggest_persist_for: "120 hours"
   }
 
+dimension: formatted_lat {
+    type: number
+    sql: ${TABLE}.latitude ;;
+    value_format: "0.00"
+  }
+  dimension: formatted_lon {
+    type: number
+    sql: ${TABLE}.longitude ;;
+    value_format: "0.00"
+  }
+
   dimension: block_group_centroid {
     type: location
-    sql_latitude: ${TABLE}.latitude ;;
-    sql_longitude: ${TABLE}.longitude ;;
+    sql_latitude: ${formatted_lat} ;;
+    sql_longitude: ${formatted_lon} ;;
     group_label: "Block Group"
     suggest_persist_for: "120 hours"
   }
