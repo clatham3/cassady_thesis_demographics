@@ -115,14 +115,8 @@ view: bq_logrecno_bg_map {
     suggest_persist_for: "120 hours"
   }
   
-  dimension: pure_county_name {
-    type: string
-    sql: replace(${TABLE}.county_name, ' County', ''), replace(${TABLE}.county_name, ' Parish', ''), 
-        replace(${TABLE}.county_name, ' Municipio', '');;
-  }
-  
   dimension: county_name_upper {
-    sql: upper(CONCAT(${pure_county_name}, ', ', ${stusab}));;
+    sql: upper(CONCAT(replace(${TABLE}.county_name, ' County', ''), ', ', ${stusab}));;
   }
 
 #   measure: count_county {
